@@ -4,7 +4,7 @@ import highway_env
 
 env = gym.make("highway-fast-v0", render_mode="human")
 
-model = DQN.load("models/dqn_v2.zip", env=env)
+model = DQN.load("../../models/dqn_v2.zip", env=env)
 obs, _ = env.reset()
 
 while True:

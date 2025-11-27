@@ -218,3 +218,20 @@ __marimo__/
 .vscode/
 highway_dqn/
 highway_dqn2/
+# Project Specific - Large Datasets & Models
+dataset/
+dataset2/
+dataset_big_highway/
+checkpoints/
+models/
+*.pth
+*.pt
+
+# Videos & Media
+videos/
+*.mp4
+*.avi
+
+# Tensorboard Logs
+tensorboard/
+old/

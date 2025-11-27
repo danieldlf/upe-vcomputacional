@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
@@ -24,7 +25,6 @@ class CLIPVisualEncoder:
         with torch.no_grad():
             features = self.model.get_image_features(**inputs)
 
-        # normalização L2 (boa prática)
         features = features / features.norm(dim=-1, keepdim=True)
         return features
 
@@ -36,3 +36,7 @@ class CLIPVisualEncoder:
 
         features = features / features.norm(dim=-1, keepdim=True)
         return features
+
+    def encode_np(self, image: np.ndarray):
+        image = Image.fromarray(image).convert("RGB") # type: ignore
+        return self.encode_pil(image) # type: ignore
