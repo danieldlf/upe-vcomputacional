@@ -1,3 +1,3 @@
-from scripts.evaluate import main
+from scripts.evaluate_dqn import main
 
 main()
